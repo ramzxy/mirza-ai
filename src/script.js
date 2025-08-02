@@ -190,24 +190,24 @@ function rendeLoop() {
   cameraGroup.position.x +=
     (parallaxX / 3 - cameraGroup.position.x) * 2 * deltaTime;
 
-  // Apply parallax effect to text elements
+  // Apply parallax effect to text elements (reduced intensity to prevent overflow)
   if (textContainer) {
-    const textParallaxX = parallaxX * 30; // Adjust intensity
-    const textParallaxY = parallaxY * 20; // Adjust intensity
+    const textParallaxX = parallaxX * 15; // Reduced intensity
+    const textParallaxY = parallaxY * 10; // Reduced intensity
 
     textContainer.style.transform = `translate(${textParallaxX}px, ${textParallaxY}px)`;
   }
 
   // Apply individual parallax to text elements for layered effect
   if (textH1) {
-    const h1ParallaxX = parallaxX * 15;
-    const h1ParallaxY = parallaxY * 10;
+    const h1ParallaxX = parallaxX * 8;
+    const h1ParallaxY = parallaxY * 5;
     textH1.style.transform = `translate(${h1ParallaxX}px, ${h1ParallaxY}px)`;
   }
 
   if (textH2) {
-    const h2ParallaxX = parallaxX * 25;
-    const h2ParallaxY = parallaxY * 15;
+    const h2ParallaxX = parallaxX * 12;
+    const h2ParallaxY = parallaxY * 8;
     textH2.style.transform = `translate(${h2ParallaxX}px, ${h2ParallaxY}px)`;
   }
 

@@ -1,12 +1,16 @@
+html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   overscroll-behavior: none;
   font-family: "Nanum Myeongjo", serif;
   color: #fff;
   background: #050505;
   scroll-behavior: smooth;
   overflow: hidden;
+  position: fixed;
 }
 
 .lds-roller {
@@ -118,6 +122,15 @@ body {
   transform: translateY(200%);
 }
 
+.main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 nav {
   width: 100%;
   padding: 1rem;
@@ -180,7 +193,7 @@ nav.header .a:hover ~ .cursor {
 
 #canvas-container {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   outline: none;
@@ -191,6 +204,7 @@ nav.header .a:hover ~ .cursor {
   padding: 0;
   background: #000;
   background: radial-gradient(circle at center center, #171717 0, #050505 58%);
+  overflow: hidden;
 }
 
 #canvas-container-details {
@@ -270,7 +284,7 @@ nav.header .a:hover ~ .cursor {
   font-size: 2.2em;
   letter-spacing: 0.5em;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   display: flex;
   height: 100vh;
   align-content: center;
@@ -282,12 +296,13 @@ nav.header .a:hover ~ .cursor {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   background: transparent;
   transition: transform 0.1s ease-out;
+  overflow: hidden;
 }
 
 .first > h2 {
